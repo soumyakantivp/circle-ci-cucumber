@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="67.998">
+    <testcase classname="Sign Up to EBL" name="Invalid email with other details good" time="18.851">
+        <system-out><![CDATA[Given the user navigates to EBL Signup......................................passed
+When the user enters "toto" as full name....................................passed
+And the user enters "org" as org name.......................................passed
+And the user enters "123.gmail.com" as email................................passed
+And the user enters "12345678" as password..................................passed
+And the user clicks submit..................................................passed
+Then the user is "not logged in"............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sign Up to EBL" name="Giving special char in org name" time="16.279">
+        <system-out><![CDATA[Given the user navigates to EBL Signup......................................passed
+When the user enters "toto" as full name....................................passed
+And the user enters "!org@" as org name.....................................passed
+And the user enters "toto@gmail.com" as email...............................passed
+And the user enters "12345678" as password..................................passed
+And the user clicks submit..................................................passed
+Then the user is "not logged in"............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sign Up to EBL" name="Full Name with special characters" time="15.393">
+        <failure message="" type="java.lang.InterruptedException"><![CDATA[Given the user navigates to EBL Signup......................................passed
+When the user enters "toto@" as full name...................................passed
+And the user enters "org" as org name.......................................passed
+And the user enters "toto@gmail.com" as email...............................passed
+And the user enters "12345678" as password..................................passed
+And the user clicks submit..................................................passed
+Then the user is "logged in"................................................failed
+
+StackTrace:
+java.lang.InterruptedException
+	at SignupStepDefinitions2.SignupSteps2.the_user_is(SignupSteps2.java:61)
+	at ✽.the user is "logged in"(file:///C:/Users/User/Desktop/workspace/Automation/test/src/test/resources/features/eblsignup2.feature:10)
+]]></failure>
+    </testcase>
+    <testcase classname="Sign Up to EBL" name="Email without or with invalid domain extension" time="17.219">
+        <system-out><![CDATA[Given the user navigates to EBL Signup......................................passed
+When the user enters "toto" as full name....................................passed
+And the user enters "org" as org name.......................................passed
+And the user enters "rachit@msg91" as email.................................passed
+And the user enters "12345678" as password..................................passed
+And the user clicks submit..................................................passed
+Then the user is "not logged in"............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
